@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    font-family: 'Smythe', system-ui;
+    overflow-x: hidden;
+}
+
+/* Controls */
+.hide{
+    display: none;
+}
+
+/* header and title */ 
+header{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9em;
+}
+
+.title-content{
+    margin: 0 1em;
+    min-width: 60%;
+}
+
+.img-container{
+    height: 90%;
+}
+
+.title-content h1{
+    font-size: 2.5rem;
+    letter-spacing: 0.125rem;
+    margin: 0;
+}
+
+.title-content h2{
+    font-size: 1rem;
+    letter-spacing: 0.125rem;
+    margin: 0;
+}
+
+.header-img{
+    height: 100%;
+}
+
+/* menu */
+.container{
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.menu-item{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  max-height: 140px;
+}
+
+.item-desc{
+    margin: 0 auto 0 0 ;
+}
+
+.item-desc h1 {
+    font-size: 1.5rem;
+    margin: 1em 0 0 0;
+}
+
+.item-desc h2 {
+    font-size: 1rem;
+    margin: 1em 0 2em 0;
+}
+
+.item-img{
+   font-size: 2.75em;
+   width: 1em;
+   margin-right: 0.5em;
+}
+
+.add-btn{
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.125em 0.5em;
+    border: solid 0.5px grey;
+    background-color: white;
+    font-size: 1.4rem;
+}
+
+.add-btn:hover{
+    background-color: #ECFDF5;
+}
+
+/* Cart */
+.order-details h3{
+    text-align: center;
+}
+
+.order-list{
+    border-bottom: 2px solid black;
+}
+
+.order-list-item{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-list-item h2{
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0.25em 0;
+}
+
+.order-list-item:last-child{
+    margin-bottom: 25px;
+}
+
+.order-list-item span{
+    text-align: right;
+}
+
+.complete-order{
+    margin: 0 0 1.5em 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pay-btn, .order-btn{
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #16DB99;
+    color: white;
+    font-weight: 700;
+    margin: 2em auto 0.5em;
+}
+
+.remove-btn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.75rem;
+    border: none;
+    background-color: transparent;
+    color: lightgray;
+}
+
+.remove-btn:hover{
+    color: black;
+}
+
+/* modal */
+form{
+    text-align: center;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: white;
+    width: 85%;
+    height: 420px;
+    max-width: 350px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+}
+
+.close-modal-btn-container{
+    text-align: right;
+    margin: 0.56em;
+}
+
+.modal-close-btn {
+  font-size: 1.375em;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: whitesmoke;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active{
+    color: red;
+    cursor: pointer;
+}
+
+input{
+    width: 88%;
+    font-size: 1.125rem;
+    margin: 0.35em 0;
+    height: 3.5rem;
+    padding: 0 1em;
+}
+
+.confirmation-msg{
+    font-size: 1.25em;
+    background-color: #ECFDF5;
+    color: #065F46;
+    text-align: center;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+}
+
+#star1{
+    background-color: yellow;
+}
+
+@media (min-width: 480px) {
+    header{
+        height: 10em;
+    }
+    
+    .title-container{
+        max-width: 786px;
+        margin: 0 auto;
+    }
+    
+    .title-content h1{
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .title-content h2{
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+@media (min-width: 786px) {
+     .title-content h1{
+        font-size: 50px;
+        
+     }
+    .title-content h2{
+    font-size: 24px;
+    }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <title></title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bc6e43d394.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title-container">
+                <div class="title-content">
+                    <h1>
+                        Jimmy's dinner
+                    </h1>
+                    <h2>
+                        The best burgers and pizzas in town.
+                    </h2>
+                </div>
+                
+                <div class="img-container">
+                    <img class="header-img" 
+                    src="images/burger.jpg" 
+                    alt="burger with fries">
+                </div>
+            </div>     
+            
+        </header>
+        
+        <main id="hero-main">
+        <!-- orders here -->
+        </main>
+        <div class="container">
+            <div class="confirmation-msg hide" id="confirmation-msg">
+                <p>Thanks<span id="customer-name-in-msg"></span>, your order is on its way</p>
+                
+            </div>
+        </div>
+        <div class="modal hide" id="modal">
+            <div class="close-modal-btn-container">
+			    <button class="modal-close-btn" id="modal-close-btn">X</button>
+		    </div>
+            <h3>Enter card details</h3>
+            
+            <form>
+                <input placeholder="Enter your name" 
+                type="text" 
+                name="customer-name" 
+                id="name"
+                autofocus
+                required>
+                <input placeholder="Enter card number" 
+                type="number" 
+                name="card-number" 
+                id="card-number"
+                aria-label="debit/credit card number" 
+                required>
+                <input placeholder="Enter CVV" 
+                type="number" 
+                name="cvv-number" 
+                id="cvv-number"
+                aria-label="credit/debit card ccv" 
+                required>
+                
+                <button type="submit" 
+                class="pay-btn" 
+                id="pay-btn"
+                aria-label="pay button">Pay</button>
+            </form>
+        </div>
+        
+    <script src="index.js" type="module"></script>
+    </body>
+</html>
