@@ -17,14 +17,14 @@ header{
 
 .title-container{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-around;
     height: 9em;
 }
 
 .title-content{
     margin: 0 1em;
-    min-width: 60%;
+    /* min-width: 60%; */
 }
 
 .img-container{

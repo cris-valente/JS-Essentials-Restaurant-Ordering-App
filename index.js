@@ -1,8 +1,10 @@
 import {menuArray} from '/data.js'
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 const heroMain = document.getElementById('hero-main')
 const modal = document.getElementById('modal')
+
+let cartArr = []
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.btnId) {
@@ -12,13 +14,11 @@ document.addEventListener('click', function(e){
         removeFromCart(e.target.dataset.removeBtn)
     }
     else if(e.target.id === "order-btn"){
-        
         modal.classList.remove('hide')
     }
     else if(e.target.id === 'modal-close-btn'){
         modal.classList.add('hide')
     }
-    
 })
 
 document.addEventListener('submit', function(e){
@@ -30,10 +30,7 @@ document.addEventListener('submit', function(e){
         renderMsg()
 })
 
-let cartArr = []
-
 function addToCartArr(itemId, name, price){
-    
     let uuid = uuidv4()
     cartArr.push({itemId, name, price, uuid})
     if (cartArr.length > 0) {
@@ -63,6 +60,15 @@ function renderCartArr(){
     })
 }
 
+function renderTotal(){
+    
+    const result = cartArr.reduce(function(total, currentElement) {
+        return total + currentElement.price
+        }, 0)
+        return document.getElementById('total-result').innerHTML = "$" + result
+
+}
+
 function removeFromCart(item){
     if(item){
         cartArr = cartArr.filter(menuItem => menuItem.uuid !== item)
@@ -74,21 +80,14 @@ function removeFromCart(item){
     renderCartArr()
 }
 
-function renderTotal(){
-    
-    const result = cartArr.reduce(function(total, currentElement) {
-        return total + currentElement.price
-        }, 0)
-        return document.getElementById('total-result').innerHTML = "$" + result
-
-}
-// the last thing to do:
 function renderMsg(){
     document.getElementById('customer-name-in-msg').textContent = ' ' + document.getElementById('name').value
     document.getElementById('confirmation-msg').classList.remove('hide')
+    setTimeout(() => {
+        document.getElementById('confirmation-msg').classList.add('hide')
+    }, 5000)
     
 }
-
 
 function renderHero(menu){
     const menuItems = menu.map(menuItem => {
@@ -152,6 +151,5 @@ function renderHero(menu){
         
         return menuItems + cart
 }
-// maybe create with a function const orderArr = [name, price, quantity]
 
 heroMain.innerHTML = renderHero(menuArray)
