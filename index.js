@@ -42,9 +42,8 @@ function addToCartArr(itemId, name, price){
 }
 
 function renderCartArr(){
-    listedItems.innerHTML = ''
-    return cartArr.map(function(cartItem) {
-            listedItems.innerHTML += `
+    listedItems.innerHTML = cartArr.map(function(cartItem) {
+            return `
             <div id="${cartItem.uuid}" class="order-list-item">
                 <div>
                     <h2>${cartItem.name}</h2><button 

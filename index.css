@@ -223,10 +223,6 @@ input{
     margin: 1em 0;
 }
 
-#star1{
-    background-color: yellow;
-}
-
 @media (min-width: 480px) {
     header{
         height: 10em;
